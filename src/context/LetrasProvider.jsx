@@ -3,7 +3,17 @@ import { useState, createContext } from "react";
 const LetrasContext = createContext();
 
 const LetrasProvider = ({ children }) => {
-  return <LetrasContext.Provider value={{}}>{children}</LetrasContext.Provider>;
+  const [alerta, setAlerta] = useState("");
+  return (
+    <LetrasContext.Provider
+      value={{
+        alerta,
+        setAlerta,
+      }}
+    >
+      {children}
+    </LetrasContext.Provider>
+  );
 };
 
 export { LetrasProvider };
